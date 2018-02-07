@@ -1,0 +1,59 @@
+ {% load staticfiles i18n cms_tags menu_tags sekizai_tags %}
+{% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
+
+{% load cms_tags %}
+<!doctype html>
+<html class="no-js" lang="{{ LANGUAGE_CODE }}" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
+    <link rel="stylesheet"  href="{% static 'css/foundation3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appv2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/component.css' %}">
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+   
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    {% render_block "css" %}
+    {{ ALDRYN_SNAKE.render_head }}
+</head>
+{% cms_toolbar %}
+
+			
+      {% show_menu 0 0 100 100  %}
+        	
+            
+      
+ 
+  
+
+
+<div id="pageContent">
+    {% block content %}
+      <p>Hello world! This is the Foundation 6 Boilerplate.</p>
+    {% endblock %}
+  </div>
+
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.js' %}"></script>
+    
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/cbpGridGallery.js' %}"></script>
+    <script>
+			new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+		</script>
+    {% render_block "js" %}
+    {{ ALDRYN_SNAKE.render_tail }}
+    
+   
+
+
+
+  {% static_placeholder "footer" %}
+
+</html>
