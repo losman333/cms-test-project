@@ -1,1 +1,1 @@
-web: gunicorn cms-test-project.wsgi
+web: gunicorn cms_test_project.wsgi
