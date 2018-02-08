@@ -58,6 +58,7 @@ INSTALLED_APPS = [
                   'taggit',
                   'djangocms_text_ckeditor',
                   'storages',
+                  '',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
