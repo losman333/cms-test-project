@@ -149,7 +149,9 @@ THUMBNAIL_PROCESSORS = (
                         'easy_thumbnails.processors.colorspace',
                         'easy_thumbnails.processors.autocrop',
                         'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-                        'easy_thumbnails.processors.filters'
+                        'easy_thumbnails.processors.filters',
+                        'easy_thumbnails.processors.background',
+
                         )
 
 
@@ -182,6 +184,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 # Static files (CSS, JavaScript, Images)
