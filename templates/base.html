@@ -9,7 +9,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
-
+    <link rel="stylesheet"  href="{% static 'css/foundation3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appv2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/component.css' %}">
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
    
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     {% render_block "css" %}
@@ -18,7 +21,7 @@
 {% cms_toolbar %}
 
 			
-      {% show_menu 0 0 100 100  %}
+      {% show_menu 0 0 100 100 "menu.html"%}
         	
             
       
@@ -32,7 +35,18 @@
     {% endblock %}
   </div>
 
-
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.js' %}"></script>
+    
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/cbpGridGallery.js' %}"></script>
+    <script>
+			new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+		</script>
     {% render_block "js" %}
     {{ ALDRYN_SNAKE.render_tail }}
     
